@@ -1,0 +1,29 @@
+
+
+<div class="split left">
+<div class="container-name">
+<div><h2>Product</h2></div>
+</div>
+  <div *ngFor="let product of products;let j = index" >
+    <h2>{{product.productName}}</h2>
+    <p>price: {{product.price}}</p>
+    <button (click)="addProductToChart(j,product)">add Product</button>
+  </div>
+</div>
+
+<div class="split right">
+<div class="container-name">
+
+<div><h2>Chart</h2> Total Price : {{chart.total}}</div>
+</div>
+  <div  *ngFor="let p of chart.products;let i = index" >
+<!--     <img src="img_avatar.png" alt="Avatar man"> -->
+    <h2>{{p.productName}}</h2>
+    <p>price: {{p.price}}.</p>
+    <button (click)="removeProductFromChart(i,p)">Remove Product</button>
+  </div>
+  
+</div>
+
+
+<router-outlet></router-outlet>
